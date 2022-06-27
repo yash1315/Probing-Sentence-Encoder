@@ -1,0 +1,62 @@
+{
+    "model_config": {
+        "use": {
+            "path": "models/USE/universal-sentence-encoder_4"
+        },
+        "sbert": {
+            "path": ""
+        },
+        "laser": {
+            "path": "models/Laser/",
+            "bpe_code":"models/Laser/93langs.fcodes",
+            "bpe_vocab":"models/Lase/93langs.fvocab",
+            "encoder":"models/Laser/bilstm.93langs.2018-12-26.pt"
+        },
+        "infersent": {
+            "path":"", 
+            "model":"models/InferSent/encoder/",
+            "vocab_size":100000,
+            "encoder":{ "v1":"models/InferSent/encoder/infersent1.pkl",
+                "v2":"models/InferSent/encoder/infersent2.pkl"
+            },
+            "model_version": "models/GloVe/glove.6B/glove.6B.300d.txt",
+            "params_model": {
+                "bsize": 64,
+                "word_emb_dim": 300,
+                "enc_lstm_dim": 2048,
+                "pool_type": "max",
+                "dpout_model": 0.0,
+                "version": 2
+            }
+        },
+        "doc2vec": {
+            "path": ""
+        }
+    },
+    "model_task": {
+        "SBert": {
+            "paraphrasing": "paraphrase-MiniLM-L6-v2",
+            "other": "nli-distilroberta-base-v2"
+            }
+    },
+    "dataset_config": {
+        "MRPC": {
+            "path": "data/mrpc.csv",
+            "dataset_size": ""
+        },
+        "QQP": {
+            "path": "data/qoura.csv",
+            "dataset_size": ""
+        },
+        "paws-wiki": {
+            "path": "data/paws_wiki.tsv",
+            "dataset_size": ""
+        }
+    },
+    "similarity_function": {
+        "type": "cosine"
+    },
+    "save_perturbed_data": {
+        "path": "data/perturbed_data"
+    }
+}
